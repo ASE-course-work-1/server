@@ -34,6 +34,9 @@ mongoose.connect(MONGO_URI, {
 app.use('/api/v1', require('./routes/customer-/login-api')); 
 app.use('/api/v1', require('./routes/customer-/register-api')); 
 
+app.use('/api/v1', require('./routes/gas-requests-/create-api')); 
+app.use('/api/v1', require('./routes/gas-requests-/ferch-all-api')); 
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
