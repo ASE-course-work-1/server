@@ -59,16 +59,18 @@ mongoose.connect(MONGO_URI, {
 });
 
      //User Routes
-app.use('/api/v1', require('./routes/customer-/login-api')); 
-app.use('/api/v1', require('./routes/customer-/register-api')); 
+app.use('/api/v1', require('./api/system-user/login')); 
+app.use('/api/v1', require('./api/system-user/register')); 
+app.use('/api/v1', require('./api/system-user/verify-otp')); 
     //Gas Request Routes
-app.use('/api/v1', require('./routes/gas-requests-/create-api')); 
-app.use('/api/v1', require('./routes/gas-requests-/ferch-all-api')); 
+app.use('/api/v1', require('./api/gas-request/create')); 
+app.use('/api/v1', require('./api/gas-request/get-userBy-contact')); 
+app.use('/api/v1', require('./api/gas-request/getAll-request')); 
     //Outlets Routes
-app.use('/api/v1', require('./routes/outlet-admin-/register-outlet-api')); 
-app.use('/api/v1', require('./routes/outlet-admin-/update-outlet-api')); 
-app.use('/api/v1', require('./routes/outlet-admin-/delete-outlet-api')); 
-app.use('/api/v1', require('./routes/outlet-admin-/getAll-outlets-api')); 
+app.use('/api/v1', require('./api/outlet-admin/register-outlet')); 
+app.use('/api/v1', require('./api/outlet-admin/update-outlet')); 
+app.use('/api/v1', require('./api/outlet-admin/delete-outlet')); 
+app.use('/api/v1', require('./api/outlet-admin/getAll-outlets')); 
 
 
 app.listen(PORT, () => {

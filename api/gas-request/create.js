@@ -39,7 +39,7 @@ router.post('/gas-requests', authMiddleware, async (req, res) => {
         const newToken = new Token({
             request: newGasRequest._id, 
             token_code: tokenCode,
-            status: 'valid',
+            // status: 'valid',
             expiry_date: expiryDate
         });
 

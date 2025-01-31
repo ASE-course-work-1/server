@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const GasRequestSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    request_status: { type: String, enum: ['pending', 'approved', 'delivered'], default: 'pending' },
+    request_status: { type: String, enum: ['pending', 'delivered'], default: 'pending' },
     created_at: { type: Date, default: Date.now }
 });
 
