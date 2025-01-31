@@ -16,7 +16,7 @@ router.post('/verify-otp', async (req, res) => {
             return res.status(400).json({ message: "Invalid OTP" });
         }
 
-        user.otp = null; 
+        user.otp = otp; 
         await user.save();
 
         res.status(200).json({ message: "Email verified successfully" });
