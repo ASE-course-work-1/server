@@ -30,7 +30,8 @@ const initializeAdmin = async () => {
         }
 
         const adminUser = new User({
-            type: 'Individual',
+            account_type: 'Individual',
+            nic:"000000000v",
             name: 'Admin',
             email: 'dinethwewalapanditha@gmail.com',
             phone: '1234567890',

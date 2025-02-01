@@ -2,7 +2,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const User = require('../../models/User');
-const Business = require('../../models/Business'); 
+//const Business = require('../../models/Business'); 
 const sendEmail = require('../../utils/sendEmail');
 
 const router = express.Router();
@@ -16,9 +16,9 @@ const generateOTP = () => {
 // Register Route
 router.post('/register', async (req, res) => {
     try {
-        const { type, name, email, phone, password, role, business_name, certification } = req.body;
+        const { account_type,nic, name, email, phone, password, role, business_reg  } = req.body;
 
-        if (!type || !name || !email || !phone || !password || !role) {
+        if (!account_type || !nic || !name || !email || !phone || !password || !role) {
             return res.status(400).json({ message: "All fields are required" });
         }
 
@@ -31,13 +31,15 @@ router.post('/register', async (req, res) => {
         const otp = generateOTP();
 
         const newUser = new User({
-            type,
+            account_type,
+            nic,
             name,
             email,
             phone,
             password: hashedPassword,
             role,
-            otp
+            otp,
+            business_reg,
         });
 
         await newUser.save();
