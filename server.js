@@ -14,7 +14,6 @@ const MONGO_URI = process.env.MONGO_URI;
 
 
 if (!MONGO_URI) {
-    console.error("Error: MONGO_URI is not defined in .env file");
     process.exit(1);
 }
 
@@ -61,7 +60,7 @@ mongoose.connect(MONGO_URI, {
      //User Routes
 app.use('/api/v1', require('./api/system-user/login')); 
 app.use('/api/v1', require('./api/system-user/register')); 
-app.use('/api/v1', require('./api/system-user/verify-otp')); 
+app.use('/api/v1', require('./api/system-user/verify-OTP')); 
     //Gas Request Routes
 app.use('/api/v1', require('./api/gas-request/create')); 
 app.use('/api/v1', require('./api/gas-request/get-userBy-contact')); 
