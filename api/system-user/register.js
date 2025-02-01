@@ -2,7 +2,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const User = require('../../models/User');
-const Business = require('../../models/Business'); 
+const Business = require('../../models/Business');
 const sendEmail = require('../../utils/sendEmail');
 
 const router = express.Router();
