@@ -70,6 +70,11 @@ app.use('/api/v1', require('./api/outlet-admin/register-outlet'));
 app.use('/api/v1', require('./api/outlet-admin/update-outlet')); 
 app.use('/api/v1', require('./api/outlet-admin/delete-outlet')); 
 app.use('/api/v1', require('./api/outlet-admin/getAll-outlets')); 
+   //Price Routes
+app.use('/api/v1', require('./api/gas-price/create'));
+app.use('/api/v1', require('./api/gas-price/update-price'));
+app.use('/api/v1', require('./api/gas-price/get-price-byID'));
+app.use('/api/v1', require('./api/gas-price/getAll-price'));
 
 
 app.listen(PORT, () => {
